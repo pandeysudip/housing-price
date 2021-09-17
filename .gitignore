@@ -1,8 +1,11 @@
+#api_key
+api_keys.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+#ds store
+.DS_Store
 # C extensions
 *.so
 
