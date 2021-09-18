@@ -1,0 +1,335 @@
+CITY,STATE,AIRPORT
+Aberdeen,SD,1
+Abilene,TX,1
+Adak,AK,1
+Agana,GU,1
+Aguadilla,PR,1
+Akron,OH,1
+Albany,GA,1
+Albany,NY,1
+Albuquerque,NM,1
+Alexandria,LA,1
+Allentown,PA,1
+Alpena,MI,1
+Amarillo,TX,1
+Anchorage,AK,1
+Appleton,WI,1
+Arcata Eureka,CA,1
+Arlington,VA,1
+Asheville,NC,1
+Aspen,CO,1
+Atlanta,GA,1
+Atlantic City,NJ,1
+Augusta,GA,1
+Austin,TX,1
+Bakersfield,CA,1
+Baltimore,MD,1
+Bangor,ME,1
+Barrow,AK,1
+Baton Rouge,LA,1
+Beaumont Port Arthur,TX,1
+Bellingham,WA,1
+Bemidji,MN,1
+Bethel,AK,1
+Billings,MT,1
+Binghamton,NY,1
+Birmingham,AL,1
+Bismarck,ND,1
+Bloomington,IL,1
+Boise,ID,1
+Boston,MA,1
+Bozeman,MT,1
+Brainerd,MN,1
+Bristol,TN,1
+Brownsville,TX,1
+Brunswick,GA,1
+Buffalo,NY,1
+Burbank,CA,1
+Burlington,VT,1
+Butte,MT,1
+Casper,WY,1
+Cedar City,UT,1
+Cedar Rapids,IA,1
+Champaign Urbana,IL,1
+Chantilly,VA,1
+Charleston,SC,1
+Charleston,WV,1
+Charlotte,NC,1
+Charlotte Amalie,VI,1
+Charlottesville,VA,1
+Chattanooga,TN,1
+Cheyenne,WY,1
+Chicago,IL,2
+Chico,CA,1
+Christiansted,VI,1
+Cleveland,OH,1
+Cody,WY,1
+College Station,TX,1
+Colorado Springs,CO,1
+Columbia,MO,1
+Columbia,SC,1
+Columbus,GA,1
+Columbus,OH,1
+Columbus-Starkville-West Point,MS,1
+Cordova,AK,1
+Corpus Christi,TX,1
+Covington,KY,1
+Crescent City,CA,1
+Dallas,TX,1
+Dallas-Fort Worth,TX,1
+Dayton,OH,1
+Daytona Beach,FL,1
+Deadhorse,AK,1
+Del Rio,TX,1
+Denver,CO,1
+Des Moines,IA,1
+Detroit,MI,1
+Devils Lake,ND,1
+Dickinson,ND,1
+Dillingham,AK,1
+Dothan,AL,1
+Dubuque,IA,1
+Duluth,MN,1
+Durango,CO,1
+Eagle,CO,1
+Eau Claire,WI,1
+El Paso,TX,1
+Elko,NV,1
+Elmira,NY,1
+Erie,PA,1
+Escanaba,MI,1
+Eugene,OR,1
+Evansville,IN,1
+Fairbanks,AK,1
+Fargo,ND,1
+Fayetteville,NC,1
+Fayetteville Springdale Rogers,AR,1
+Flagstaff,AZ,1
+Flint,MI,1
+Florence,SC,1
+Fort Smith,AR,1
+Fort Wayne,IN,1
+Fresno,CA,1
+Ft. Lauderdale,FL,1
+Ft. Myers,FL,1
+Gainesville,FL,1
+Garden City,KS,1
+Gillette,WY,1
+Grand Forks,ND,1
+Grand Island,NE,1
+Grand Junction,CO,1
+Grand Rapids,MI,1
+Great Falls,MT,1
+Green Bay,WI,1
+Greensboro,NC,1
+Greer,SC,1
+Gulfport-Biloxi,MS,1
+Gunnison,CO,1
+Gustavus,AK,1
+Hailey,ID,1
+Hancock,MI,1
+Harlingen,TX,1
+Harrisburg,PA,1
+Hattiesburg-Laurel,MS,1
+Hayden,CO,1
+Hays,KS,1
+Helena,MT,1
+Hibbing,MN,1
+Hilo,HI,1
+Hobbs,NM,1
+Honolulu,HI,1
+Houston,TX,2
+Huntington,WV,1
+Huntsville,AL,1
+Hyannis,MA,1
+Idaho Falls,ID,1
+Imperial,CA,1
+Indianapolis,IN,1
+International Falls,MN,1
+Inyokern,CA,1
+Iron Mountain Kingsford,MI,1
+Islip,NY,1
+Ithaca,NY,1
+Jackson,MS,1
+Jackson,WY,1
+Jacksonville,FL,1
+Jacksonville,NC,1
+Jamestown,ND,1
+Joplin,MO,1
+Juneau,AK,1
+Kahului,HI,1
+Kailua Kona,HI,1
+Kalamazoo,MI,1
+Kalispell,MT,1
+Kansas City,MO,1
+Ketchikan,AK,1
+Key West,FL,1
+Killeen,TX,1
+King Salmon,AK,1
+Klamath Falls,OR,1
+Knoxville,TN,1
+Kodiak,AK,1
+Kotzebue,AK,1
+La Crosse,WI,1
+Lafayette,LA,1
+Lake Charles,LA,1
+Lansing,MI,1
+Laramie,WY,1
+Laredo,TX,1
+Las Vegas,NV,1
+Lawton,OK,1
+Lewisburg,WV,1
+Lewiston,ID,1
+Lexington,KY,1
+Lihue,HI,1
+Lincoln,NE,1
+Little Rock,AR,1
+Long Beach,CA,1
+Longview,TX,1
+Los Angeles,CA,1
+Louisville,KY,1
+Lubbock,TX,1
+Lynchburg,VA,1
+Macon,GA,1
+Madison,WI,1
+Mammoth Lakes,CA,1
+Manchester,NH,1
+Manhattan,KS,1
+Marthas Vineyard,MA,1
+McAllen,TX,1
+Medford,OR,1
+Melbourne,FL,1
+Memphis,TN,1
+Meridian,MS,1
+Miami,FL,1
+Midland,TX,1
+Milwaukee,WI,1
+Minneapolis,MN,1
+Minot,ND,1
+Missoula,MT,1
+Moab,UT,1
+Mobile,AL,1
+Modesto,CA,1
+Moline,IL,1
+Monroe,LA,1
+Monterey,CA,1
+Montgomery,AL,1
+Montrose,CO,1
+Moses Lake,WA,1
+Mosinee,WI,1
+Muskegon,MI,1
+Myrtle Beach,SC,1
+Nantucket,MA,1
+Nashville,TN,1
+New Bern,NC,1
+New Orleans,LA,1
+New York,NY,2
+Newark,NJ,1
+Newburgh,NY,1
+Newport News,VA,1
+Nome,AK,1
+Norfolk,VA,1
+North Bend,OR,1
+Oakland,CA,1
+Oklahoma City,OK,1
+Omaha,NE,1
+Ontario,CA,1
+Orlando,FL,1
+Oxnard,CA,1
+Paducah,KY,1
+Pago Pago,AS,1
+Palm Springs,CA,1
+Panama City,FL,1
+Pasco,WA,1
+Pellston,MI,1
+Pensacola,FL,1
+Peoria,IL,1
+Petersburg,AK,1
+Philadelphia,PA,1
+Phoenix,AZ,1
+Pierre,SD,1
+Pittsburgh,PA,1
+Pocatello,ID,1
+Ponce,PR,1
+Portland,ME,1
+Portland,OR,1
+Providence,RI,1
+Pueblo,CO,1
+Raleigh,NC,1
+Rapid City,SD,1
+Redding,CA,1
+Redmond,OR,1
+Reno,NV,1
+Rhinelander,WI,1
+Richmond,VA,1
+Roanoke,VA,1
+Rochester,MN,1
+Rochester,NY,1
+Rock Springs,WY,1
+Rockford,IL,1
+Roswell,NM,1
+Sacramento,CA,1
+Saginaw,MI,1
+Salt Lake City,UT,1
+San Angelo,TX,1
+San Antonio,TX,1
+San Diego,CA,1
+San Francisco,CA,1
+San Jose,CA,1
+San Juan,PR,1
+San Luis Obispo,CA,1
+Santa Ana,CA,1
+Santa Barbara,CA,1
+Santa Fe,NM,1
+Santa Maria,CA,1
+Sarasota,FL,1
+Sault Ste. Marie,MI,1
+Savannah,GA,1
+Seattle,WA,1
+Shreveport,LA,1
+Sioux City,IA,1
+Sioux Falls,SD,1
+Sitka,AK,1
+South Bend,IN,1
+Spokane,WA,1
+Springfield,IL,1
+Springfield,MO,1
+St Cloud,MN,1
+St George,UT,1
+St Louis,MO,1
+St. Petersburg,FL,1
+Staunton Harrisonburg,VA,1
+Syracuse,NY,1
+Tallahassee,FL,1
+Tampa,FL,1
+Telluride,CO,1
+Texarkana,AR,1
+Toledo,OH,1
+Topeka,KS,1
+Traverse City,MI,1
+Trenton,NJ,1
+Tucson,AZ,1
+Tulsa,OK,1
+Tupelo,MS,1
+Twin Falls,ID,1
+Tyler,TX,1
+Valdosta,GA,1
+Valparaiso,FL,1
+Vernal,UT,1
+Waco,TX,1
+Waterloo,IA,1
+Watertown,NY,1
+West Palm Beach,FL,1
+West Yellowstone,MT,1
+White Plains,NY,1
+Wichita,KS,1
+Wichita Falls,TX,1
+Wilkes-Barre Scranton,PA,1
+Williston,ND,1
+Wilmington,DE,1
+Wilmington,NC,1
+Windsor Locks,CT,1
+Worcester,MA,1
+Wrangell,AK,1
+Yakutat,AK,1
+Yuma,AZ,1
