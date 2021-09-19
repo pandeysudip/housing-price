@@ -1,5 +1,6 @@
 #api_key
 api_keys.py
+my_keys.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -130,3 +131,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# IDEA files
+**/.idea
