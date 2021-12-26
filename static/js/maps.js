@@ -45,7 +45,7 @@ function createMap() {
             // Setting the marker 
             cMarkers.push(
                 L.circle([d.Lat, d.Lng], {
-                    color: "red",
+                    color: "blue",
                     fillColor: "green",
                     fillOpacity: 0.75,
                     radius: markerSize(d.RandomForestPredictedHouseValue)

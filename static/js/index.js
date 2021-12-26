@@ -15,7 +15,7 @@ function init() {
             menu.append("option").text(city).property("value", city);
         });
         //creating function for initial plots 
-        var initSample = uniqueCity[1]
+        var initSample = uniqueCity[1002]
         createMap(initSample);
     })
 };
