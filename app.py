@@ -1,4 +1,5 @@
-from flask import Flask, render_template, redirect, jsonify, request
+from flask import Flask, render_template, redirect, jsonify
+import flask
 from pymongo import MongoClient
 import utilis
 import json
@@ -35,15 +36,15 @@ def index():
     return render_template('index.html', predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
 
 
-@app.route('/prediction.html')
-def prediction():
+@app.route('/maps.html')
+def maps():
     # Store the entire collection as a list
     census_2017_list = list(census_2017.find())
     census_2019_list = list(census_2019.find())
     predict_list = list(predictions.find())
 
     # Return the template
-    return render_template('prediction.html',  predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
+    return render_template('maps.html',  predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
 
 
 @app.route('/contact.html')
@@ -52,40 +53,52 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/predict/', methods=["GET", "POST"])
-def predict():
-    # Store the entire collection as a list
-    census_2017_list = list(census_2017.find())
-    census_2019_list = list(census_2019.find())
-    predict_list = list(predictions.find())
+@app.route('/prediction.html', methods=["GET", "POST"])
+def predic():
+    if flask.request.method == "POST":
 
-    if request.method == "POST":
-        city = request.form.get("City")
-    prediction = utilis.preprocess(city)
+        MonthlyOwnerCost = flask.request.form.get('Monthly Owner Cost')
+        PerCapitaIncome = flask.request.form.get("Per Capita Income")
+        Lng = flask.request.form.get("Lng")
+        Lat = flask.request.form.get('Lat')
+        Lat, *_ = Lat
+        HouseholdIncome = flask.request.form.get('Household Income')
+        CollegeRate = flask.request.form.get('College Rate')
+        PersonalTransportRate = flask.request.form.get(
+            'Personal Transport Rate')
+        HighSchoolRate = flask.request.form.get('High School Rate')
+        MedianAge = flask.request.form.get('Median Age')
+        PublicTransportRate = flask.request.form.get('Public Transport Rate')
+        Population = flask.request.form.get('Population')
+        variables = [MonthlyOwnerCost, PerCapitaIncome, Lng,  HouseholdIncome,
+                     CollegeRate, Lat, PersonalTransportRate, HighSchoolRate, MedianAge, PublicTransportRate, Population]
+        predict = utilis.preprocess(variables)
+        predict, *_ = predict
+        # Return the template
+        return render_template("prediction.html", pred=variables, prediction=predict)
+    else:
+        return render_template("prediction.html")
 
-    # Return the template
-    return render_template('predict.html', prediction=prediction,  predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
 
-
-@app.route("/data/2019")
+@ app.route("/data/2019")
 def get_census_2019():
     census_2019_list = list(census_2019.find())
     return json.dumps(census_2019_list, default=json_util.default)
 
 
-@app.route("/data/2017")
+@ app.route("/data/2017")
 def get_census_2017():
     census_2017_list = list(census_2017.find())
     return json.dumps(census_2017_list, default=json_util.default)
 
 
-@app.route("/data/predict")
+@ app.route("/data/predict")
 def get_predict():
     predict_list = list(predictions.find())
     return json.dumps(predict_list, default=json_util.default)
 
 
-@app.route("/data/all_data")
+@ app.route("/data/all_data")
 def get_all():
     # Store the entire collection as a list
     census_2017_list = list(census_2017.find())
