@@ -81,11 +81,7 @@ We also plotted the best city using google maps API. As we can see, most best ci
 ![cahousing6.png](figures/best_cities_2019.png)
 
 
-**Data set**
-
-   ![3-Data](Images/3-Data.png)
-
-   [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) 
+ 
 
 
 
