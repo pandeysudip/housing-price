@@ -52,30 +52,20 @@ Creating a dashboard using HTML, CSS, javascript,and Bootstrap.
   * Containing all the contact information.
   ![final_app_part5.png](figures/web5.png)
 
-2. **Understanding the Barriers of Affordable Housing in California**
+2.**Understanding the Barriers of Affordable Housing in California**
 We looked on how the city population, income, poverty, and different other factors that we get from census API like education, transportation affects the housing price. And from all these different factors, we nominated the best 5 cities to live in california.
+![cahousing0.png](figures/lat_Vs_lng_vs_House Value.png)
 
 a. **How Housing Prices related to other factors?**
 At first, we want to uncover patterns on housing prices in different California cities and want to see how the housing price is related to other factors. For this, we looked on the most important parameters for the year 2019 which are as follows:
 
 I. **Economy**
-Figure below shows the housing price in each city with population size. This figure gives us an idea to see how housing value varies in each city.
-![cahousing1.png](figures/web5.png)
-
-We looked how the household income, monthly rent, poverty rate, and monthly owner cost effects the housing value. We saw that there is positive relation with household income, monthly owner cost, and monthly rent whereas a negative relationship with poverty as shown in Figure.
-![cahousing2.png](figures/web5.png)
 
 II. **Education**
-We also explored how with college rate, median age of people, high school rate, and uneducated rate effects the housing value. We saw that there is positive relationship with people having college degree and median age of people, however there is negative relationship with high school people rate and uneducated people rate.
-![cahousing3.png](figures/web5.png)
 
 III. **Transportation**
-For the transportation related parameters, we explored how the public transportation, personal transportation, and commute time of the city effects the housing value. We saw that there is positive relation with public transportation, i.e., city having good public transportation has a higher house value. Personal transportation and commute time has no effects on the housing value as shown in figure:
-![cahousing4.png](figures/web5.png)
 
 IV. **Race**
-For the race related parameters, we explored how the race of people like, White, Black, Asian, Hispanic race effects the housing value. We saw that there is positive relation with Asian Race people and negative relation with Hispanic race to the housing value. Other race has no effects on the housing value as shown in figure.
-![cahousing5.png](figures/web5.png)
 
 b. **Most Affordable 5 Cities of California**
 Our team analyzed the best cities to live in based on certain criteria, for some it could be weather, cuisine or endless entertainment for family. Hence, we chose to analyze on some of the most important and common factors an individual would consider. After exploring all these different parameters, we nominated the best cities with the most common factors which are as follows:
@@ -88,7 +78,7 @@ Our team analyzed the best cities to live in based on certain criteria, for some
 We gave each parameter equal weight and nominated the best cities which satisfy most of the parameters above. 
 
 We also plotted the best city using google maps API. As we can see, most best cities are in bay area and southern part of California.
-![cahousing6.png](figures/web5.png)
+![cahousing6.png](figures/best_cities_2019.png)
 
 
 **Data set**
@@ -97,7 +87,7 @@ We also plotted the best city using google maps API. As we can see, most best ci
 
    [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) 
 
-   ![4-JSON](Images/4-JSON.png)
+
 
 
 
