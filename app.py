@@ -3,13 +3,16 @@ import utilis
 import flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy import create_engine, func
 import os
 # Create an instance of Flask
 app = Flask(__name__)
 
+uri = os.environ.get('DATABASE_URL', '')
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/housing-price'
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/housing-price'
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
