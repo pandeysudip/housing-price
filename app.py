@@ -2,7 +2,8 @@ from flask import Flask, render_template, redirect, jsonify, request
 import utilis
 import flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.ext.automap import automap_base
+#from sqlalchemy.ext.automap import automap_base
+from model import create_classes
 import os
 # Create an instance of Flask
 app = Flask(__name__)
@@ -18,7 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
+Pred = create_classes(db)
 # getting the tables from database-1st approach
 #data_2019 = db.Table('data_2019', db.metadata,autoload=True, autoload_with=db.engine)
 #data_2017 = db.Table('data_2017', db.metadata,autoload=True, autoload_with=db.engine)
@@ -29,13 +30,13 @@ db = SQLAlchemy(app)
 
 # getting the tables from database-2nd approach
 # reflect an existing database into a new model
-Base = automap_base()
-Base.prepare(db.engine, reflect=True)
+#Base = automap_base()
+#Base.prepare(db.engine, reflect=True)
 
 # Save references to each table
-data_2019 = Base.classes.data_2019
-data_2017 = Base.classes.data_2017
-prediction = Base.classes.prediction
+#data_2019 = Base.classes.data_2019
+#data_2017 = Base.classes.data_2017
+#prediction = Base.classes.prediction
 
 
 @app.route('/')
@@ -97,8 +98,8 @@ def predic():
 def get_predict():
     """Return a list of all passenger names"""
     # Query all data
-    results = db. session.query(
-        prediction.City, prediction.RandomForestPredictedHouseValue, prediction.Lat, prediction.Lng).all()
+    results = db.session.query(
+        Pred.City, Pred.RandomForestPredictedHouseValue, Pred.Lat, Pred.Lng).all()
 
     # Convert a dictionary
     # Create a dictionary from the row data and append to a list of all_passengers
