@@ -36,7 +36,7 @@ function createMap() {
         var cMarkers = []
         for (var i = 0; i < data.length; i++) {
             var d = data[i]
-            //console.log(d);
+            console.log(d);
 
 
             console.log(d.Lat);

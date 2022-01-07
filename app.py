@@ -1,22 +1,38 @@
-from flask import Flask, render_template, redirect, jsonify
-import flask
-from pymongo import MongoClient
+from flask import Flask, render_template, redirect, jsonify, request
 import utilis
-import json
-from bson import json_util
-
-
+import flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy import create_engine, func
+import os
 # Create an instance of Flask
 app = Flask(__name__)
 
-# Use PyMongo to establish Mongo connection
-# mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
-client = MongoClient("mongodb://localhost:27017")
-db = client['us-housing-prediction']
-# creating collection
-census_2019 = db['census_2019']
-census_2017 = db['census_2017']
-predictions = db['predictions']
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/housing-price'
+
+# Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+# getting the tables from database-1st approach
+#data_2019 = db.Table('data_2019', db.metadata,autoload=True, autoload_with=db.engine)
+#data_2017 = db.Table('data_2017', db.metadata,autoload=True, autoload_with=db.engine)
+#prediction = db.Table('prediction', db.metadata,autoload=True, autoload_with=db.engine)
+
+# query be like: db.session.query(train).all()
+
+
+# getting the tables from database-2nd approach
+# reflect an existing database into a new model
+Base = automap_base()
+Base.prepare(db.engine, reflect=True)
+
+# Save references to each table
+data_2019 = Base.classes.data_2019
+data_2017 = Base.classes.data_2017
+prediction = Base.classes.prediction
 
 
 @app.route('/')
@@ -27,24 +43,17 @@ def home():
 
 @app.route('/index.html')
 def index():
-    # Store the entire collection as a list
-    census_2017_list = list(census_2017.find())
-    census_2019_list = list(census_2019.find())
-    predict_list = list(predictions.find())
 
     # Return the template
-    return render_template('index.html', predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
+    return render_template('index.html')
 
 
 @app.route('/maps.html')
 def maps():
     # Store the entire collection as a list
-    census_2017_list = list(census_2017.find())
-    census_2019_list = list(census_2019.find())
-    predict_list = list(predictions.find())
 
     # Return the template
-    return render_template('maps.html',  predict_list=predict_list, census_2019_list=census_2019_list, census_2017_list=census_2017_list)
+    return render_template('maps.html')
 
 
 @app.route('/contact.html')
@@ -73,38 +82,33 @@ def predic():
         variables = [MonthlyOwnerCost, PerCapitaIncome, Lng,  HouseholdIncome,
                      CollegeRate, Lat, PersonalTransportRate, HighSchoolRate, MedianAge, PublicTransportRate, Population]
         predict = utilis.preprocess(variables)
-        predict, *_ = predict
+        #predict, *_ = predict
         # Return the template
+
         return render_template("prediction.html", pred=variables, prediction=predict)
     else:
         return render_template("prediction.html")
 
 
-@ app.route("/data/2019")
-def get_census_2019():
-    census_2019_list = list(census_2019.find())
-    return json.dumps(census_2019_list, default=json_util.default)
-
-
-@ app.route("/data/2017")
-def get_census_2017():
-    census_2017_list = list(census_2017.find())
-    return json.dumps(census_2017_list, default=json_util.default)
-
-
 @ app.route("/data/predict")
 def get_predict():
-    predict_list = list(predictions.find())
-    return json.dumps(predict_list, default=json_util.default)
+    """Return a list of all passenger names"""
+    # Query all data
+    results = db. session.query(
+        prediction.City, prediction.RandomForestPredictedHouseValue, prediction.Lat, prediction.Lng).all()
 
+    # Convert a dictionary
+    # Create a dictionary from the row data and append to a list of all_passengers
+    predict_list = []
+    for City, RandomForestPredictedHouseValue, Lat, Lng in results:
+        prediction_dict = {}
+        prediction_dict['City'] = City
+        prediction_dict["RandomForestPredictedHouseValue"] = RandomForestPredictedHouseValue
+        prediction_dict["Lat"] = Lat
+        prediction_dict["Lng"] = Lng
+        predict_list.append(prediction_dict)
 
-@ app.route("/data/all_data")
-def get_all():
-    # Store the entire collection as a list
-    census_2017_list = list(census_2017.find())
-    predict_list = list(predictions.find())
-    all_list = census_2017_list+predict_list
-    return json.dumps(all_list, default=json_util.default)
+    return jsonify(predict_list)
 
 
 if __name__ == "__main__":
