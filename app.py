@@ -18,7 +18,7 @@ mongo = PyMongo(app, tls=True)
 
 # create database
 #db = mongo['us-agriculture']
-db = mongo.db['us-housing-prediction']
+db = mongo.db['us-housing']
 # creating collection
 census_2019 = db['census_2019']
 census_2017 = db['census_2017']
