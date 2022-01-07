@@ -39,3 +39,6 @@ uncertainties==3.1.6
 uszipcode==0.2.6
 Werkzeug==2.0.2
 psycopg2==2.9.3
+joblib==1.0.1
+pymongo==3.12.1
+Flask-PyMongo==2.3.0
