@@ -6,6 +6,7 @@ __pycache__/
 *$py.class
 #ds store
 .DS_Store
+mongopass.py
 # C extensions
 *.so
 
