@@ -14,15 +14,16 @@ app = Flask(__name__)
 #client = MongoClient("mongodb://localhost:27017")
 
 app.config["MONGO_URI"] = os.environ.get('MONGODB_URI', '')
-mongo = PyMongo(app, tls=True)
+app.config['MONG_DBNAME'] = 'us-housing'
+mongo = PyMongo(app)
 
 # create database
-#db = mongo['us-agriculture']
-db = mongo.db['us-housing']
+#db = client['us-housing-prediction']
+#db = mongo.db['us-housing']
 # creating collection
-census_2019 = db['census_2019']
-census_2017 = db['census_2017']
-predictions = db['predictions']
+census_2019 = mongo.db['census_2019']
+census_2017 = mongo.db['census_2017']
+predictions = mongo.db['predictions']
 
 
 @app.route('/')
