@@ -3,6 +3,7 @@ function init() {
     d3.json('/data/predict').then((data) => {
         //select the dropdown.
         var menu = d3.select("#selDataset");
+        console.log(data)
 
         //states.filter(onlyUnique)
         var cities = []

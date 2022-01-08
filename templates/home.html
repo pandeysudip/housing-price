@@ -1,73 +1,54 @@
 {% extends "layout.html" %}
 {% block body %}
         <!--Home-->
-        <section id="tal" class="bg-dark text-light p-5 mt-5 text-center text-sm-start">
-            <div class="sidebar">
+        <section id="tal" class=" text-light p-5 mt-5 text-center text-sm-start">
+            <div >
                 <div class="d-lg-flex">
-                    <div class="container fluid">
-                        <h3 class=" p-3 text-warning text-center">Summary:US-Housing</h3>
-                        <div>
-                            <p class="text-primary">
-                                This website presents an overview of the US agriculture over the year 2017. You will find
-                                various information relating to every type of crop, such as news articles, representative images, sale values, weather,
-                                or even graphics. Local weather information is also available to give the user an idea of favorable.
-                                The combination of these visualization tools may help the user get a better understanding of the might
-                                of the US agricultural productivity.
+                    <div class="row">
+                        <div class="column">
+                        <h3 class=" p-3 text-danger text-center">Summary:US-Housing</h3>
+                       
+                            <p class="text-warning">
+                                Housing market in different cities in the US fluctuates a lot. Housing price is not always related to a single factor. In this project, we uncovered patterns on housing prices in different US cities. We looked on how the city population, income, poverty, and different other factors that we get from census API like education, transportation affects the housing price.To predict the house value, we built different supervised linear models from scikit learn. Our best model is Random Forest Regressor which has a mean absolute error of around $27000.
                             </p>
-                            <h5>Some quick numbers:</h5>
-                            <h6 class="text-success">
-                                 Total agricultural sales in 2017 amounted to $314 billion, divided between three types of products:
-                                Field crops ($250 Billion), Fruits ($47 Billion), and Vegetables ($16 Billion).
-                            </h6>
-
-                            <h5>Some guidance:</h5>
+                        </div>
+                        <div class="column">
+                            <h5 class=" p-3 text-danger text-center">Some Facts:</h5>
 
                             <p class="text-success">
                                 
-                                 Click on the maps to see the geographical distribution of individual crop production across the country,
-                                you may also find the local information that way. Click on the home page to see most of the information presented in one page.
+                                 Please select the city name to see the housing price of that city. Also on the prediction page you can input the information to get the predeicted house value from the best model. Click on the home page to see most of the information presented in one page.
                                 Please click contact for any comments, or questions you may have for us.
                                 Happy Browsing!
 
                             </p>
-
-
                         </div>
 
+
+                        
+
                     </div>
-                    <div>
-                        <img class="img-fluid " src="final_corr.png" alt="picture" />
-                        <p>plots</p>
+
+                </div>  
+                <div class="card bg-danger text-white p-2">
+                    <div class="well ">
+                        <h4 class="text-white">Choose City:</h4>
+                        <select id="selDataset" onchange="optionChanged(this.value)"></select>
                     </div>
-                    <div class="container ">
-                        <div class="card bg-danger text-white p-2">
-                            <div class="well ">
-                                <h4 class="text-white">Choose City:</h4>
-                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                            </div>
-                        </div>
-                        <div class="d-md-flex ">
-                            <div class="container-fluid bg-secondary text-center">
- 
-                                <div id="sample-metadata-pic"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="d-md-flex ">
-                            <div class="container-fluid bg-black text-center">
-                                <h6 class="text-white p-3">Maps</h6>
-                                <div id="map1"></div>
-                            </div>
-                            
-                        </div>
-              
+                </div>
+                
+                <div class="d-sm-flex ">
+                    <div class="container-fluid bg-black text-center">
+                        <h6 class="text-white p-3">Maps</h6>
+                        <div id="map1"></div>
                     </div>
-                </div> 
+                    
+                </div>
+        
+                    
             </div>
         </section>
-        <footer>
-            <p>Copyright &copy; pandeysudip2021</p>
-        </footer>
+
 
 
         <!-- JavaScript file -->

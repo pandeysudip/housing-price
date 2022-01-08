@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect, jsonify
 import flask
 from pymongo import MongoClient
-import utilis
 import json
 import os
 from bson import json_util
@@ -97,15 +96,6 @@ def get_census_2017():
 def get_predict():
     predict_list = list(predictions.find())
     return json.dumps(predict_list, default=json_util.default)
-
-
-@ app.route("/data/all_data")
-def get_all():
-    # Store the entire collection as a list
-    census_2017_list = list(census_2017.find())
-    predict_list = list(predictions.find())
-    all_list = census_2017_list+predict_list
-    return json.dumps(all_list, default=json_util.default)
 
 
 if __name__ == "__main__":
