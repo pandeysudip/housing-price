@@ -1,5 +1,6 @@
 # housing-price-prediction
-![1-Logo1](figures/web3.png)
+The website is deployed to Heroku at:  
+https://us-housing.herokuapp.com/
 
 ## Background
 We used Census API to download the 5 years of US Census data and looked on the relationship of house price to other factors like economy, education, transportation and race. We get some interesting trend of house value on different years census data.  We build a model to predict the house value and our best model predicts the house value perfectly with an error of around $30,000. We also foused on California housing and see that the economy, education, and transportation are the important parameters for the housing value and recommended that these parameters other cities need to improve to be in the best city.
