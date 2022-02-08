@@ -13,6 +13,7 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 #client = MongoClient("mongodb://localhost:27017")
 #
+#
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI', '')
 app.config['MONG_DBNAME'] = 'us-housing'
 mongo = PyMongo(app)

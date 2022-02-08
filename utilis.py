@@ -4,7 +4,7 @@ import numpy as np
 
 def preprocess(variables):
     if variables[0] == '' or variables[1] == '' or variables[2] == '' or variables[3] == '' or variables[4] == '' or variables[5] == '' or variables[6] == '' or variables[7] == '' or variables[8] == '' or variables[9] == '' or variables[10] == '':
-        return "Please enter the above information first and click submit. "
+        return "Please enter all the above information first and click submit. "
     else:
         # using standardscaler for transformation
         scaler = joblib.load('scaler.pkl')
