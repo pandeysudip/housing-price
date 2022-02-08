@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
 #client = MongoClient("mongodb://localhost:27017")
-
+#
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI', '')
 app.config['MONG_DBNAME'] = 'us-housing'
 mongo = PyMongo(app)
@@ -28,7 +28,7 @@ predictions = mongo.db['predictions']
 @app.route('/')
 def home():
     # Return the template
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/index.html')
@@ -52,7 +52,7 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/prediction.html', methods=["GET", "POST"])
+@app.route('/send', methods=["GET", "POST"])
 def predic():
     if flask.request.method == "POST":
 
@@ -78,18 +78,6 @@ def predic():
         return render_template("prediction.html", pred=variables, prediction=predict)
     else:
         return render_template("prediction.html")
-
-
-@ app.route("/data/2019")
-def get_census_2019():
-    census_2019_list = list(census_2019.find())
-    return json.dumps(census_2019_list, default=json_util.default)
-
-
-@ app.route("/data/2017")
-def get_census_2017():
-    census_2017_list = list(census_2017.find())
-    return json.dumps(census_2017_list, default=json_util.default)
 
 
 @ app.route("/data/predict")

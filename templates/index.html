@@ -6,16 +6,21 @@
                 <div class="d-lg-flex">
                     <div class="row">
                         <div class="column">
-                        <h3 class=" p-3 text-danger text-center">Summary:US-Housing</h3>
-                       
-                            <p class="text-warning">
+                        <h1 class=" p-5 text-white text-center">US-Housing</h1>
+                        <div class=" row justify-content-md-center ">
+                            <p class="text-black bg-white col col-lg-8 mx-5 p-2">
                                 Housing market in different cities in the US fluctuates a lot. Housing price is not always related to a single factor. In this project, we uncovered patterns on housing prices in different US cities. We looked on how the city population, income, poverty, and different other factors that we get from census API like education, transportation affects the housing price.To predict the house value, we built different supervised linear models from scikit learn. Our best model is Random Forest Regressor which has a mean absolute error of around $27000.
                             </p>
                         </div>
+                        </div>
                         <div class="column">
-                            <h5 class=" p-3 text-danger text-center">Some Facts:</h5>
+                            <div class=" row justify-content-md-center p-1">
+                                <h5 class="col col-lg-2 bg-dark">Some Facts:</h5>
 
-                            <p class="text-success">
+                            </div>
+                            
+
+                            <p class="text-primary bg-black mx-5 p-2">
                                 
                                  Please select the city name to see the housing price of that city. Also on the prediction page you can input the information to get the predeicted house value from the best model. Click on the home page to see most of the information presented in one page.
                                 Please click contact for any comments, or questions you may have for us.
@@ -40,7 +45,7 @@
                 <div class="d-sm-flex ">
                     <div class="container-fluid bg-black text-center">
                         <h6 class="text-white p-3">Maps</h6>
-                        <div id="map1"></div>
+                        <div id="map4"></div>
                     </div>
                     
                 </div>
@@ -48,9 +53,92 @@
                     
             </div>
         </section>
+        <div class=" row justify-content-md-center p-3">
+            <h4 class="col col-lg-9 text-white bg-warning p-3">Please enter the following information to predict the housing price:</h4>
 
+        </div>
+        <div class="row justify-content-md-center  mx-5 p-5 ">
+            <div class=" col-lg-6 mx-5 p-1" >
+               
+                <form action = "/send" method = "post">
+    
+                    <div class="mb-3  lead text-white">
+                        <label  for="Monthly Owner Cost">Monthly Owner Cost</label>
+                        <input  type="number" step="any" name="Monthly Owner Cost" id="Monthly Owner Cost" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Per Capita Income">Per Capita Income</label>
+                        <input  type="number" step="any" name="Per Capita Income" id="Per Capita Income" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Lng">Lng</label>
+                        <input  type="number" step="any" name="Lng" id="Lng" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Household Income">Household Income</label>
+                        <input  type="number" step="any" name="Household Income" id="Household Income" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="College Rate">College Rate</label>
+                        <input  type="number" step="any" name="College Rate" id="College Rate" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Lat">Lat</label>
+                        <input  type="number" step="any" name="Lat" id="Lat" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Personal Transport Rate">Personal Transport Rate</label>
+                        <input  type="number" step="any" name="Personal Transport Rate" id="Personal Transport Rate" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="High School Rate">High School Rate</label>
+                        <input  type="number" step="any" name="High School Rate" id="High School Rate" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Median Age">Median Age</label>
+                        <input  type="number" step="any" name="Median Age" id="Median Age" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Public Transport Rate">Public Transport Rate</label>
+                        <input  type="number" step="any" name="Public Transport Rate" id="Public Transport Rate" />
+                        
+                    </div>
+                    <div class="mb-3  lead text-white">
+                        <label  for="Population">Population</label>
+                        <input  type="number" step="any" name="Population" id="Population" />
+                       
+                    </div>
+                    <!-- Form submit button -->
+                    <div class="d-grid p-5">
+                        <button class="btn btn-primary btn-lg" type="submit" value="submit">Submit</button>
+                    </div>
+                    
+                </form>
+            
+            </div>
+            <div class=" text-white row justify-content-md-center">
+                <h1 class="text-center"></h1>
+                <h3> {{ prediction }}</h3>
+      
+          </div>
+    
+        </div>
+        <div>
+            <h3 class="p-5 text-center text-warning"> For any inquiry please <a href="contact.html" target="_blank">contact me</a></h3>
+        </div>
 
-
+        <footer>
+            <p>Copyright &copy; pandeysudip2021</p>
+        </footer>
         <!-- JavaScript file -->
         
         <script type="text/javascript" src="static/js/index.js"></script>

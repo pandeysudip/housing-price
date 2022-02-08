@@ -11,4 +11,4 @@ def preprocess(variables):
     trained_model = joblib.load('model.pkl')
     prediction = trained_model.predict(test_data)
 
-    return prediction
+    return f'Predicted Housing Value is:{prediction}'
