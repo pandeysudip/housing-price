@@ -9,43 +9,32 @@
                         <h1 class=" p-5 text-white text-center">US-Housing</h1>
                         <div class=" row justify-content-md-center ">
                             <p class="text-black bg-white col col-lg-8 mx-5 p-2">
-                                Housing market in different cities in the US fluctuates a lot. Housing price is not always related to a single factor. In this project, we uncovered patterns on housing prices in different US cities. We looked on how the city population, income, poverty, and different other factors that we get from census API like education, transportation affects the housing price.To predict the house value, we built different supervised linear models from scikit learn. Our best model is Random Forest Regressor which has a mean absolute error of around $27000.
+                                Housing market in different cities in the US fluctuates a lot. Housing price is not always related to a single factor. In this project, we uncovered patterns on housing prices in different US cities. We looked on how the city population, income, poverty, and different other factors that we get from census API like education, transportation affects the housing price.To predict the house value, we built and trained different Regression Models. Our best model is Random Forest Regressor which has a mean absolute error of around $27000 and the predicted house value is based on Random Forest learning algorithm.
                             </p>
                         </div>
                         </div>
                         <div class="column">
                             <div class=" row justify-content-md-center p-1">
-                                <h5 class="col col-lg-2 bg-dark">Some Facts:</h5>
+                                <h5 class="col col-lg-2 "></h5>
 
                             </div>
-                            
-
-                            <p class="text-primary bg-black mx-5 p-2">
+                            <p class="text-primary  mx-5 p-2">
                                 
-                                 Please select the city name to see the housing price of that city. Also on the prediction page you can input the information to get the predeicted house value from the best model. Click on the home page to see most of the information presented in one page.
-                                Please click contact for any comments, or questions you may have for us.
-                                Happy Browsing!
-
                             </p>
                         </div>
-
-
-                        
-
                     </div>
-
                 </div>  
                 <div class="card bg-danger text-white p-2">
                     <div class="well ">
-                        <h4 class="text-white">Choose City:</h4>
+                        <h4 class="text-white">Please select the city name to see the housing price of that city. Multiple cities with the same name will be displayed in map with their predicted housing price:</h4>
                         <select id="selDataset" onchange="optionChanged(this.value)"></select>
                     </div>
                 </div>
                 
-                <div class="d-sm-flex ">
+                <div class="d-lg-flex ">
                     <div class="container-fluid bg-black text-center">
                         <h6 class="text-white p-3">Maps</h6>
-                        <div id="map4"></div>
+                        <div id="map1"></div>
                     </div>
                     
                 </div>
@@ -54,12 +43,16 @@
             </div>
         </section>
         <div class=" row justify-content-md-center p-3">
-            <h4 class="col col-lg-9 text-white bg-warning p-3">Please enter the following information to predict the housing price:</h4>
+            <h4 class="col col-lg-9 text-white bg-warning p-3">Please enter the following information manually to predict the housing price of your city:</h4>
 
         </div>
-        <div class="row justify-content-md-center  mx-5 p-5 ">
+        <div class="row justify-content-md-center  mx-5 ">
             <div class=" col-lg-6 mx-5 p-1" >
-               
+                <div class="col-md-8  bg-primary">
+                    <h2 role="presentation" class="nav-item text-center">
+                        <a href="index.html" class="nav-link lead text-white">Please click to refresh</a>
+                    </h2>
+                </div>
                 <form action = "/send" method = "post">
     
                     <div class="mb-3  lead text-white">
@@ -73,7 +66,7 @@
                         
                     </div>
                     <div class="mb-3  lead text-white">
-                        <label  for="Lng">Lng</label>
+                        <label  for="Lng">Longitude</label>
                         <input  type="number" step="any" name="Lng" id="Lng" />
                         
                     </div>
@@ -88,7 +81,7 @@
                         
                     </div>
                     <div class="mb-3  lead text-white">
-                        <label  for="Lat">Lat</label>
+                        <label  for="Lat">Lattitude</label>
                         <input  type="number" step="any" name="Lat" id="Lat" />
                         
                     </div>
@@ -127,7 +120,7 @@
             </div>
             <div class=" text-white row justify-content-md-center">
                 <h1 class="text-center"></h1>
-                <h3> {{ prediction }}</h3>
+                <h2 class="text-center"> {{ prediction }}</h2>
       
           </div>
     
@@ -141,7 +134,7 @@
         </footer>
         <!-- JavaScript file -->
         
-        <script type="text/javascript" src="static/js/index.js"></script>
+        <script type="text/javascript" src="static/js/index1.js"></script>
    
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

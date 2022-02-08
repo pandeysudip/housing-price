@@ -3,6 +3,7 @@ import flask
 from pymongo import MongoClient
 import json
 import os
+import utilis
 from bson import json_util
 from flask_pymongo import PyMongo
 
@@ -20,8 +21,8 @@ mongo = PyMongo(app)
 #db = client['us-housing-prediction']
 #db = mongo.db['us-housing']
 # creating collection
-census_2019 = mongo.db['census_2019']
-census_2017 = mongo.db['census_2017']
+#census_2019 = mongo.db['census_2019']
+#census_2017 = mongo.db['census_2017']
 predictions = mongo.db['predictions']
 
 
@@ -55,12 +56,10 @@ def contact():
 @app.route('/send', methods=["GET", "POST"])
 def predic():
     if flask.request.method == "POST":
-
         MonthlyOwnerCost = flask.request.form.get('Monthly Owner Cost')
         PerCapitaIncome = flask.request.form.get("Per Capita Income")
         Lng = flask.request.form.get("Lng")
         Lat = flask.request.form.get('Lat')
-        Lat, *_ = Lat
         HouseholdIncome = flask.request.form.get('Household Income')
         CollegeRate = flask.request.form.get('College Rate')
         PersonalTransportRate = flask.request.form.get(
@@ -75,9 +74,10 @@ def predic():
         #predict, *_ = predict
         # Return the template
 
-        return render_template("prediction.html", pred=variables, prediction=predict)
+        #
+        return render_template("index.html", pred=variables, prediction=predict)
     else:
-        return render_template("prediction.html")
+        return render_template("index.html")
 
 
 @ app.route("/data/predict")
